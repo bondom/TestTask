@@ -166,14 +166,14 @@
 	
 	  marker = new google.maps.Marker({position:ukraine});
 	  marker.setMap(map);
-	  marker.setVisible(false);
+	  hideMarker();
 	  
 	  let input = (document.getElementById("departure"));
 	  let autocomplete = new google.maps.places.Autocomplete(input);
 	  autocomplete.bindTo('bounds',map);
 	  
 	  autocomplete.addListener('place_changed',function(){
-		  marker.setVisible(false);
+		  hideMarker();
 		  
 		  directionsDisplay.setDirections({routes: []});
 		  routes.elIndexDrawn=-1;
