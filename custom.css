@@ -1,0 +1,18 @@
+#header{
+	margin-bottom: 30px;
+}
+#departure{
+	width:30%;
+}
+#routes ul > li{
+	display: inline-block;
+	margin-right:10px;
+}
+.borderedRoute{
+	border:1px solid blue;
+	background-color: blue;
+}
+.borderedRoute > a{
+	color: white;
+	text-decoration: none;	
+}

@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js"></script>
+		<link rel="stylesheet" type = "text/css" href="custom.css"/>
+	</head>
+	<body>
+		<div id="header">
+			<label>Пункт отправки:</label>
+			<input id="departure" type="text">
+			<div id="routes">
+				<ul v-show="departurePChoosed">
+					<li
+						is="route"
+						v-for="(city,index) in cities"
+						v-bind:finish-point=city.title
+						v-bind:departure-point=departurePoint
+						v-bind:class="{ borderedRoute : (elIndexDrawn==index)?true:false }"
+						v-on:draw="drawRoute(index)"
+					></li>
+					<!-- <li v-for="(city,index) in cities">
+						<a href="#" v-on:click="drawRoute(index)">из {{departurePoint}} в {{city.title}}</a>
+					</li> -->
+				</ul>
+			</div>
+		</div>
+		<div id="map" style="width:100%;height:500px"></div>
+	
+		
+		
+		
+		<script type="text/javascript" src="../TestTask/build.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB34QrrLXsVZ9gJRkyzFFIz9mIexHka3io&callback=initializeMap&libraries=places&language=ru-RU"></script>
+	</body>
+
+</html>
